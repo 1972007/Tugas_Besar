@@ -1,5 +1,4 @@
 import csv
-
 from BranchAndBound import BranchAndBound
 
 def csv_to_int_arr(path):
@@ -14,11 +13,12 @@ def csv_to_int_arr(path):
             matrix.append(arr)
     return matrix
 
-matrix = (csv_to_int_arr('Person_per_cost.csv'))
-# csv_viewer(open('Person_per_time.csv'))
-res = BranchAndBound(matrix)
-res.reduce_matrix_row()
-print()
-res.reduce_matrix_column()
+def main():
+    matrix = (csv_to_int_arr('Tugas_Besar/test2.csv'))
+    # csv_viewer(open('Person_per_time.csv'))
+    res = BranchAndBound(matrix)
+    res.branch_bound()
 
 
+if __name__=="__main__":
+    main()
